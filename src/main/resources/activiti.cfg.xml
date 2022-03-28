@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+    <!-- 定义一个id为processEngineConfiguration的流程引擎配置类，然后为它设置属性值 -->
+    <bean id="processEngineConfiguration"
+          class="org.activiti.engine.impl.cfg.StandaloneProcessEngineConfiguration">
+        <!-- 数据库连接配置 -->
+        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/hans_activiti_demo?serverTimezone=GMT%2B8"></property>
+        <property name="jdbcDriver" value="com.mysql.cj.jdbc.Driver"></property>
+        <property name="jdbcUsername" value="root"></property>
+        <property name="jdbcPassword" value="123456"></property>
+        <!-- 建表策略 -->
+        <property name="databaseSchemaUpdate" value="true"></property>
+        <!-- 其它省略 -->
+    </bean>
+</beans>
